@@ -7,6 +7,8 @@ from IPython.display import clear_output
 
 data = pd.read_csv("G:\DATA SCIENCE\Assignment\For Python\california-housing-prices\housing.csv")
 
+data =data.dropna(axis=0)
+
 data
 
 target_var = data['median_house_value']
