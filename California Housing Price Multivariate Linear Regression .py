@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[6]:
-
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -11,33 +5,16 @@ import random
 from IPython.display import clear_output
 
 
-# In[7]:
-
-
 data = pd.read_csv("G:\DATA SCIENCE\Assignment\For Python\california-housing-prices\housing.csv")
 
-
-# In[8]:
-
-
 data
-
-
-# In[22]:
-
 
 target_var = data['median_house_value']
 feature = data.drop(['median_house_value','ocean_proximity'], axis=1).copy()
 
 
-# In[23]:
-
-
 feature = feature/feature.max()
 target_var = target_var/target_var.max()
-
-
-# In[24]:
 
 
 target_var = np.array(target_var)
@@ -45,20 +22,12 @@ target_var = np.reshape(target_var, [1,len(target_var)])
 print(target_var.shape)
 
 
-# In[25]:
-
 
 feature = np.array(feature)
 
 
-# In[26]:
-
-
 print("Feature Shape : ", feature.shape)
 print("Target Variable shape : ", target_var.shape)
-
-
-# In[27]:
 
 
 def line_multidim(m,x,c):
@@ -76,8 +45,6 @@ def derivative_intercept(m,x,c,y):
 def accuracy_pred(error,y):
   return 100 - (error/np.mean(y**2))*100
 
-
-# In[28]:
 
 
 m = np.random.randn(1,8)
@@ -99,7 +66,6 @@ plt.plot(error_array)
 plt.show()
 
 
-# In[ ]:
 
 
 
